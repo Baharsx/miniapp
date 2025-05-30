@@ -3,34 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Clicker - Farcaster Frame</title>
-    
-    <!-- Farcaster Frame Meta Tags -->
-    <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="https://i.imgur.com/crypto-clicker-preview.png" />
-    <meta property="fc:frame:image" content="https://raw.githubusercontent.com/Baharsx/miniapp/refs/heads/main/photo_2025-01-23_21-58-54.jpg" />
-    <meta property="fc:frame:button:1" content="🎮 Play Game" />
-    <meta property="fc:frame:button:1:action" content="link" />
-    <meta property="fc:frame:button:2" content="💰 Click Coin" />
-    <meta property="fc:frame:button:2:action" content="post" />
-    <meta property="fc:frame:button:3" content="📊 Stats" />
-    <meta property="fc:frame:button:3:action" content="post" />
-    <meta property="fc:frame:button:4" content="🔄 Refresh" />
-    <meta property="fc:frame:button:4:action" content="post" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="💰 Crypto Clicker - Farcaster Game" />
-    <meta property="og:description" content="Click to earn FarCoins! Build your crypto empire in this addictive clicker game." />
-    <meta property="og:image" content="https://i.imgur.com/crypto-clicker-preview.png" />
-    <meta property="og:url" content="https://your-domain.com" />
-    <meta property="og:type" content="website" />
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="💰 Crypto Clicker - Farcaster Game" />
-    <meta name="twitter:description" content="Click to earn FarCoins! Build your crypto empire!" />
-    <meta name="twitter:image" content="https://i.imgur.com/crypto-clicker-preview.png" />
-
+    <title>Crypto Clicker - Farcaster Mini App</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
         
@@ -59,125 +32,8 @@
             100% { background-position: 0% 50%; }
         }
 
-        .frame-preview {
-            width: 100%;
-            max-width: 600px;
-            aspect-ratio: 1.91/1;
-            background: linear-gradient(135deg, #1a1a2e, #533483);
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .frame-preview::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(
-                from 0deg,
-                transparent,
-                rgba(255, 215, 0, 0.1),
-                transparent,
-                rgba(138, 43, 226, 0.1),
-                transparent
-            );
-            animation: rotate 10s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
-        }
-
-        .frame-title {
-            background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
-            background-size: 200% 200%;
-            animation: shimmer 3s ease-in-out infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 3em;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-        }
-
-        @keyframes shimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .frame-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        .coin-display {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(145deg, #ffd700, #ffed4e, #ffa500);
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            font-size: 4em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-            box-shadow: 
-                0 15px 35px rgba(255, 215, 0, 0.4),
-                inset 0 5px 15px rgba(255, 255, 255, 0.3),
-                0 0 50px rgba(255, 215, 0, 0.3);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
-        }
-
-        .frame-stats {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .stat-item {
-            text-align: center;
-            color: #fff;
-        }
-
-        .stat-value {
-            font-size: 1.5em;
-            font-weight: 700;
-            background: linear-gradient(45deg, #fff, #ffd700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            font-size: 0.8em;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         .stars {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -214,11 +70,29 @@
             width: 90%;
             position: relative;
             overflow: hidden;
-            display: none;
         }
 
-        .game-container.active {
-            display: block;
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                transparent,
+                rgba(255, 215, 0, 0.1),
+                transparent,
+                rgba(138, 43, 226, 0.1),
+                transparent
+            );
+            animation: rotate 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
         }
 
         h1 {
@@ -232,6 +106,11 @@
             font-size: 2.5em;
             font-weight: 900;
             text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .subtitle {
@@ -260,6 +139,46 @@
             overflow: hidden;
         }
 
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+        }
+
+        .stat-value {
+            font-size: 1.6em;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.7em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 8px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .coin-button {
             width: 180px;
             height: 180px;
@@ -276,6 +195,52 @@
             margin: 25px 0;
             position: relative;
             overflow: hidden;
+        }
+
+        .coin-button::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), transparent);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .coin-button:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 
+                0 20px 40px rgba(255, 215, 0, 0.6),
+                inset 0 5px 15px rgba(255, 255, 255, 0.4),
+                0 0 80px rgba(255, 215, 0, 0.5);
+        }
+
+        .coin-button:active {
+            transform: scale(0.95) rotate(-5deg);
+            box-shadow: 
+                0 10px 20px rgba(255, 215, 0, 0.8),
+                inset 0 5px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .coin-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s;
+        }
+
+        .coin-button.clicked::after {
+            width: 120%;
+            height: 120%;
+            opacity: 0;
         }
 
         .upgrades {
@@ -309,6 +274,40 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
+        }
+
+        .upgrade-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .upgrade-btn:hover::before {
+            left: 100%;
+        }
+
+        .upgrade-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .upgrade-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .upgrade-btn:disabled:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            transform: none;
+            box-shadow: none;
         }
 
         .user-info {
@@ -349,90 +348,142 @@
             }
         }
 
-        .frame-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
         }
 
-        .frame-btn {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
-            border: 1px solid rgba(255, 215, 0, 0.3);
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #ffd700, #ffed4e);
+            border-radius: 50%;
+            animation: particle 3s infinite;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes particle {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50vh) rotate(180deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .status-message {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(0, 255, 127, 0.2), rgba(0, 255, 127, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 127, 0.3);
             color: #fff;
-            padding: 12px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Orbitron', monospace;
-            font-weight: 600;
             font-size: 0.9em;
-            text-decoration: none;
-            display: inline-block;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.4s ease;
+            transform: translateY(20px);
         }
 
-        .frame-btn:hover {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2));
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        .status-message.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .hidden {
-            display: none;
+        .glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+            pointer-events: none;
         }
 
-        @media (max-width: 768px) {
-            .frame-preview {
-                margin: 20px;
-                padding: 30px;
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.1;
+            }
+        }
+
+        .coin-sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 1s ease-out forwards;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(360deg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-container {
+                padding: 25px;
+                margin: 10px;
             }
             
-            .frame-title {
-                font-size: 2.5em;
+            h1 {
+                font-size: 2em;
             }
             
-            .coin-display {
-                width: 100px;
-                height: 100px;
-                font-size: 3em;
+            .coin-button {
+                width: 150px;
+                height: 150px;
+                font-size: 3.5em;
+            }
+            
+            .stats {
+                gap: 10px;
+            }
+            
+            .stat-card {
+                padding: 15px 8px;
             }
         }
     </style>
 </head>
 <body>
     <div class="stars" id="stars"></div>
+    <div class="particles" id="particles"></div>
     
-    <!-- Frame Preview (Default View) -->
-    <div class="frame-preview" id="framePreview">
-        <h1 class="frame-title">💰 CRYPTO CLICKER</h1>
-        <p class="frame-subtitle">Build Your FarCoin Empire!</p>
-        
-        <div class="coin-display">💰</div>
-        
-        <div class="frame-stats">
-            <div class="stat-item">
-                <div class="stat-value" id="previewBalance">0</div>
-                <div class="stat-label">FarCoins</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="previewPower">1</div>
-                <div class="stat-label">Per Click</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="previewClicks">0</div>
-                <div class="stat-label">Clicks</div>
-            </div>
-        </div>
-        
-        <div class="frame-buttons">
-            <button class="frame-btn" onclick="startGame()">🎮 Play Now</button>
-            <button class="frame-btn" onclick="showInfo()">ℹ️ Info</button>
-        </div>
-    </div>
-
-    <!-- Full Game (Hidden by default) -->
-    <div class="game-container" id="gameContainer">
+    <div class="game-container">
+        <div class="glow-effect"></div>
         <div class="user-info" id="userInfo">🔗 Connecting...</div>
         
         <h1>💰 CRYPTO CLICKER</h1>
@@ -453,7 +504,9 @@
             </div>
         </div>
 
-        <button class="coin-button" id="coinButton" onclick="clickCoin()">💰</button>
+        <button class="coin-button" id="coinButton" onclick="clickCoin()">
+            💰
+        </button>
 
         <div class="upgrades">
             <h3 class="upgrade-title">⚡ Upgrades ⚡</h3>
@@ -468,21 +521,12 @@
             </button>
         </div>
 
-        <div class="frame-buttons">
-            <button class="frame-btn" onclick="backToFrame()">🔙 Back to Frame</button>
-            <button class="frame-btn" onclick="shareScore()">📤 Share Score</button>
-        </div>
+        <div class="status-message" id="statusMessage"></div>
     </div>
 
     <script type="module">
         // Farcaster Frame SDK Import
-        let sdk;
-        try {
-            const module = await import('https://esm.sh/@farcaster/frame-sdk');
-            sdk = module.sdk;
-        } catch (e) {
-            console.log('Frame SDK not available');
-        }
+        import { sdk } from 'https://esm.sh/@farcaster/frame-sdk';
         
         // Game State
         let gameState = {
@@ -498,12 +542,11 @@
         };
 
         let user = null;
-        let isFrameMode = true;
 
         // Create stars background
         function createStars() {
             const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 100; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
                 star.style.left = Math.random() * 100 + '%';
@@ -514,62 +557,22 @@
             }
         }
 
-        // Frame Functions
-        window.startGame = function() {
-            document.getElementById('framePreview').style.display = 'none';
-            document.getElementById('gameContainer').classList.add('active');
-            isFrameMode = false;
-            initializeFarcaster();
-        };
-
-        window.backToFrame = function() {
-            document.getElementById('framePreview').style.display = 'flex';
-            document.getElementById('gameContainer').classList.remove('active');
-            isFrameMode = true;
-            updatePreview();
-        };
-
-        window.showInfo = function() {
-            alert('💰 Crypto Clicker\n\n🎮 Click to earn FarCoins\n⚡ Buy upgrades to boost earnings\n🤖 Auto-miners work while you\'re away\n💎 Build your crypto empire!\n\nStart playing now!');
-        };
-
-        window.shareScore = function() {
-            const text = `Just earned ${gameState.balance.toLocaleString()} FarCoins in Crypto Clicker! 💰\n\nCan you beat my score? 🚀`;
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: 'My Crypto Clicker Score',
-                    text: text,
-                    url: window.location.href
-                });
-            } else {
-                navigator.clipboard.writeText(text + '\n' + window.location.href);
-                alert('Score copied to clipboard! 📋');
-            }
-        };
-
-        function updatePreview() {
-            document.getElementById('previewBalance').textContent = gameState.balance.toLocaleString();
-            document.getElementById('previewPower').textContent = gameState.clickPower.toLocaleString();
-            document.getElementById('previewClicks').textContent = gameState.totalClicks.toLocaleString();
-        }
-
         // Initialize Farcaster SDK
         async function initializeFarcaster() {
             try {
-                if (sdk) {
-                    await sdk.init();
-                    user = await sdk.user.getUser();
-                    
-                    if (user) {
-                        document.getElementById('userInfo').textContent = `👋 ${user.displayName || 'Anon'}`;
-                    } else {
-                        document.getElementById('userInfo').textContent = '🎮 Guest Player';
-                    }
+                await sdk.init();
+                user = await sdk.user.getUser();
+                
+                if (user) {
+                    document.getElementById('userInfo').textContent = `👋 ${user.displayName || 'Anon'}`;
+                    showStatusMessage(`🎉 Welcome ${user.displayName || 'Anon'}! Start your crypto journey! 🚀`);
+                } else {
+                    document.getElementById('userInfo').textContent = '🎮 Guest Player';
                 }
             } catch (error) {
-                console.log('Frame mode - limited functionality');
-                document.getElementById('userInfo').textContent = '🌟 Frame Player';
+                console.log('Farcaster SDK not available, running in standalone mode');
+                document.getElementById('userInfo').textContent = '✨ Demo Mode';
+                showStatusMessage('🎮 Demo mode activated - Start clicking to earn! 💰');
             }
         }
 
@@ -578,20 +581,25 @@
             gameState.balance += gameState.clickPower;
             gameState.totalClicks++;
             
+            // Add floating coin animation
             createFloatingCoin();
             
+            // Add sparkle effects
+            createSparkles();
+            
+            // Add click effect
             const button = document.getElementById('coinButton');
-            button.style.transform = 'scale(0.95) rotate(-5deg)';
-            setTimeout(() => {
-                button.style.transform = 'scale(1) rotate(0deg)';
-            }, 150);
+            button.classList.add('clicked');
+            setTimeout(() => button.classList.remove('clicked'), 400);
             
             updateDisplay();
-            updatePreview();
+            
+            // Achievement system
+            checkAchievements();
         };
 
         window.buyUpgrade = function(upgradeType) {
-            let cost;
+            let cost, effect;
             
             switch(upgradeType) {
                 case 1: // Double Click
@@ -600,9 +608,10 @@
                         gameState.balance -= cost;
                         gameState.upgrades.doubleClick++;
                         gameState.clickPower = 1 + gameState.upgrades.doubleClick * 2;
-                        alert('🔥 Click power boosted!');
+                        showStatusMessage('🔥 Click power boosted! Now earning ' + gameState.clickPower + ' per click!');
+                        createUpgradeEffect();
                     } else {
-                        alert('💸 Not enough FarCoins!');
+                        showStatusMessage('💸 Not enough FarCoins! Keep clicking!');
                     }
                     break;
                     
@@ -614,9 +623,10 @@
                         if (!gameState.autoClickerActive) {
                             startAutoClicker();
                         }
-                        alert('⚡ Auto mining bot deployed!');
+                        showStatusMessage('⚡ Auto mining bot deployed! Passive income activated!');
+                        createUpgradeEffect();
                     } else {
-                        alert('💸 Need more FarCoins!');
+                        showStatusMessage('💸 Need more FarCoins for the bot!');
                     }
                     break;
                     
@@ -626,15 +636,15 @@
                         gameState.balance -= cost;
                         gameState.upgrades.diamondHands++;
                         gameState.clickPower += 5;
-                        alert('💎 Diamond hands activated!');
+                        showStatusMessage('💎 Diamond hands activated! Massive gains incoming!');
+                        createUpgradeEffect();
                     } else {
-                        alert('💸 Diamond hands require more coins!');
+                        showStatusMessage('💸 Diamond hands require diamond coins!');
                     }
                     break;
             }
             
             updateDisplay();
-            updatePreview();
         };
 
         function startAutoClicker() {
@@ -645,25 +655,64 @@
                         const autoGain = gameState.upgrades.autoClicker * 2;
                         gameState.balance += autoGain;
                         updateDisplay();
-                        updatePreview();
+                        if (Math.random() < 0.3) { // 30% chance to show effect
+                            createFloatingCoin(autoGain, '⚡');
+                        }
                     }
-                }, 2000);
+                }, 1500);
             }
         }
 
-        function createFloatingCoin() {
+        function createFloatingCoin(amount = gameState.clickPower, emoji = '💰') {
             const coin = document.createElement('div');
             coin.className = 'floating-coin';
-            coin.textContent = '💰+' + gameState.clickPower;
-            coin.style.left = (Math.random() * 200 + 100) + 'px';
-            coin.style.top = '200px';
+            coin.textContent = emoji + '+' + amount;
+            coin.style.left = (Math.random() * 250 + 50) + 'px';
+            coin.style.top = '250px';
             coin.style.zIndex = '1000';
             
-            document.querySelector('#gameContainer').appendChild(coin);
+            document.querySelector('.game-container').appendChild(coin);
             
             setTimeout(() => {
                 coin.remove();
             }, 1200);
+        }
+
+        function createSparkles() {
+            const button = document.getElementById('coinButton');
+            const rect = button.getBoundingClientRect();
+            
+            for (let i = 0; i < 6; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'coin-sparkle';
+                sparkle.style.left = (Math.random() * 180 + rect.left - rect.left) + 'px';
+                sparkle.style.top = (Math.random() * 180 + rect.top - rect.top) + 'px';
+                sparkle.style.animationDelay = (Math.random() * 0.3) + 's';
+                
+                button.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+        }
+
+        function createUpgradeEffect() {
+            for (let i = 0; i < 10; i++) {
+                createFloatingCoin(Math.floor(Math.random() * 50) + 10, '✨');
+            }
+        }
+
+        function checkAchievements() {
+            if (gameState.totalClicks === 10) {
+                showStatusMessage('🏆 First Milestone! 10 clicks achieved!');
+            } else if (gameState.totalClicks === 100) {
+                showStatusMessage('🏆 Century Club! 100 clicks mastered!');
+            } else if (gameState.totalClicks === 1000) {
+                showStatusMessage('🏆 Click Master! 1000 clicks conquered!');
+            } else if (gameState.balance >= 1000) {
+                showStatusMessage('🏆 Crypto Millionaire! 1000 FarCoins earned!');
+            }
         }
 
         function updateDisplay() {
@@ -671,6 +720,7 @@
             document.getElementById('clickPower').textContent = gameState.clickPower.toLocaleString();
             document.getElementById('totalClicks').textContent = gameState.totalClicks.toLocaleString();
             
+            // Update upgrade buttons
             updateUpgradeButtons();
         }
 
@@ -688,9 +738,40 @@
             document.getElementById('upgrade3').disabled = gameState.balance < upgrade3Cost;
         }
 
+        function showStatusMessage(message) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.classList.add('show');
+            
+            setTimeout(() => {
+                statusEl.classList.remove('show');
+            }, 4000);
+        }
+
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 4 + 3) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                
+                particles.appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 7000);
+            }, 1500);
+        }
+
         // Initialize everything
         window.addEventListener('load', () => {
             createStars();
+            initializeFarcaster();
+            createParticles();
+            updateDisplay();
             
             // Load saved game
             const savedGame = localStorage.getItem('cryptoClickerSave');
@@ -699,22 +780,22 @@
                 if (gameState.upgrades.autoClicker > 0) {
                     startAutoClicker();
                 }
+                updateDisplay();
             }
-            
-            updatePreview();
-            updateDisplay();
-            
-            // Auto-save every 5 seconds
-            setInterval(() => {
-                localStorage.setItem('cryptoClickerSave', JSON.stringify(gameState));
-            }, 5000);
         });
 
-        // Handle URL parameters for frame actions
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('action') === 'play') {
-            setTimeout(startGame, 500);
-        }
+        // Save game state periodically
+        setInterval(() => {
+            localStorage.setItem('cryptoClickerSave', JSON.stringify(gameState));
+        }, 3000);
+
+        // Add keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' || e.code === 'Enter') {
+                e.preventDefault();
+                clickCoin();
+            }
+        });
     </script>
 </body>
 </html>
